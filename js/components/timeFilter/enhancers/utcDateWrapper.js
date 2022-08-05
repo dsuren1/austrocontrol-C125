@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-const { compose, withHandlers, withPropsOnChange } = require('recompose');
+import { compose, withHandlers, withPropsOnChange } from 'recompose';
 // const getTimeZoneOffset = () => (new Date()).getTimezoneOffset() * 60000; // offset in milliseconds
 
 
@@ -15,7 +15,7 @@ const { compose, withHandlers, withPropsOnChange } = require('recompose');
  * but you want to use the date as it was UTC.
  * TODO: generalize for any timezone, using this formula `(new Date()).getTimezoneOffset() * 60000` + timezone offset
  */
-module.exports = compose(
+export default compose(
     withPropsOnChange(['date'], ({ date }) => ({
         date: date
             ? new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(),

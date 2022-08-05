@@ -5,10 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-const { compose, withState, withHandlers, withPropsOnChange } = require('recompose');
+import { compose, withState, withHandlers, withPropsOnChange } from 'recompose';
+import utcDateWrapper from './utcDateWrapper';
 
 
-module.exports = compose(
+export default compose(
     withState('expanded', 'setExpanded', true),
     withPropsOnChange(['date'], ({ date }) => ({
         date: date ? new Date(date) : undefined
@@ -16,5 +17,5 @@ module.exports = compose(
     withHandlers({
         onSetDate: ({ onSetDate = () => { } }) => date => onSetDate((date && date.toISOString) ? date.toISOString() : undefined)
     }),
-    require('./utcDateWrapper')
+    utcDateWrapper
 );

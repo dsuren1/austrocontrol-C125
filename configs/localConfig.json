@@ -489,19 +489,6 @@
                 "cfg": {
                     "wrap": true
                 }
-            }, {
-                "name": "Identify",
-                "cfg": {
-                    "showHighlightFeatureButton": true,
-                    "viewerOptions": {
-                        "container": "{context.ReactSwipe}"
-                    }
-                },
-                "override": {
-                  "Toolbar": {
-                    "position": 11
-                  }
-                }
             },{
               "name": "About",
               "showIn": ["BurgerMenu"]
@@ -644,6 +631,7 @@
               }, {
                 "name": "Identify",
                 "cfg": {
+                    "showInMapPopup":true,
                     "showFullscreen": true,
                     "position": "bottom",
                     "size": 0.5,
@@ -772,7 +760,7 @@
               "fluid": true
             }
           }
-          , "MailingLists", "Footer", {
+          , "Footer", {
           "name": "Cookie",
           "cfg": {
             "externalCookieUrl" : "",
@@ -913,6 +901,32 @@
               "containerPosition": "header"
             }
           }
+        ],
+        "geostory-embedded": [
+            "GeoStory",
+            {
+              "name": "GeoStoryNavigation",
+              "cfg": {
+                "containerPosition": "header"
+              }
+            },
+            {
+              "name": "FeedbackMask",
+              "cfg": {
+                "containerPosition": "header"
+              }
+            }
+        ],
+        "dashboard-embedded": [
+            {
+              "name": "Dashboard",
+              "cfg": {
+                "minLayoutWidth": 768
+              }
+            },
+            {
+              "name": "FeedbackMask"
+            }
         ],
         "manager": ["Header", "Redirect", "Manager", "Home", "UserManager", "GroupManager", "Footer"],
         "context-manager": ["Header", "Redirect", "Home", "ContextManager", "Footer"]

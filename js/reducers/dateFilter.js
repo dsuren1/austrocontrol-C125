@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { set } from '../../MapStore2/web/client/utils/ImmutableUtils';
+import { set } from '@mapstore/utils/ImmutableUtils';
 import { SET_EFFECTIVE_DATES, SET_DATE, TOGGLE_LAYER_VISIBILITY} from '../actions/dateFilter';
 
 /**

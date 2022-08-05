@@ -6,13 +6,13 @@
  * LICENSE file in the root directory of this source tree.
  */
 import assign from 'object-assign';
-import {connect} from 'react-redux';
-import {compose, branch, renderNothing} from 'recompose';
-import {createSelector} from 'reselect';
+import { connect} from 'react-redux';
+import { compose, branch, renderNothing } from 'recompose';
+import { createSelector } from 'reselect';
 
-import {setDate, toggleLayerVisibility} from '../actions/dateFilter';
+import { setDate, toggleLayerVisibility } from '../actions/dateFilter';
 import { getEffectiveDates, getDate, showDateFilter, getHideLayers } from '../selectors/dateFilter';
-import { mapLayoutValuesSelector } from '../../MapStore2/web/client/selectors/maplayout';
+import { mapLayoutValuesSelector } from '@mapstore/selectors/maplayout';
 
 import * as epics from '../epics/dateFilter';
 import dateFilter from '../reducers/dateFilter';
@@ -26,7 +26,7 @@ import DateFilter from '../components/timeFilter/DateFilter';
  * @memberof plugins
  * @prop cfg.showLayerVisibilityToggle hides / shows layer visibility toggle button.
  */
-const DateFilterPlugin = compose(
+const DateFilterComp = compose(
     connect(
         createSelector(
             (state) => mapLayoutValuesSelector(state, { left: true }),
@@ -58,7 +58,7 @@ const DateFilterPlugin = compose(
 )(DateFilter);
 
 export default {
-    DateFilterPlugin: assign(DateFilterPlugin, {
+    DateFilterPlugin: assign(DateFilterComp, {
         disablePluginIf: "{state('featuregridmode') === 'EDIT'}",
         FloatingCard: {
             priority: 2,
