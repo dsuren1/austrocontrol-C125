@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import expect from 'expect';
-import { getDate, getDimensionName, getEffectiveDates, showDateFilter} from '../dateFilter';
+import { getDate, getDimensionName, getEffectiveDates, showDateFilter} from '@js/selectors/dateFilter';
 
 describe('dateFilter selectors', () => {
     it('getEffectiveDate, getDimensionName, showDateFilter and getDate', () => {

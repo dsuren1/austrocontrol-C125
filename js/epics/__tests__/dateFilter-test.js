@@ -7,15 +7,15 @@
  */
 
 import expect from 'expect';
-import { testEpic } from '../../../MapStore2/web/client/epics/__tests__/epicTestUtils';
-import { loadDateFilterEffectiveDates, dateFilterToggleHideLayerVisibility } from '../dateFilter';
-import { SET_EFFECTIVE_DATES, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '../../actions/dateFilter';
-import {SHOW_NOTIFICATION} from '../../../MapStore2/web/client/actions/notifications';
-import { CHANGE_LAYER_PROPERTIES, changeLayerProperties } from '../../../MapStore2/web/client/actions/layers';
 import { LOCATION_CHANGE } from 'connected-react-router';
 
+import { configureMap} from '@mapstore/actions/config';
+import { testEpic } from '@mapstore/epics/__tests__/epicTestUtils';
+import {SHOW_NOTIFICATION} from '@mapstore/actions/notifications';
+import { CHANGE_LAYER_PROPERTIES, changeLayerProperties } from '@mapstore/actions/layers';
 
-import { configureMap} from '../../../MapStore2/web/client/actions/config';
+import { loadDateFilterEffectiveDates, dateFilterToggleHideLayerVisibility } from '@js/epics/dateFilter';
+import { SET_EFFECTIVE_DATES, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '@js/actions/dateFilter';
 
 const STATE_LAYERS = {
     layers: {

@@ -9,11 +9,12 @@
 import React from 'react';
 import assign from 'object-assign';
 import PropTypes from 'prop-types';
-import {connect} from '../../MapStore2/web/client/utils/PluginsUtils';
-import {Checkbox} from 'react-bootstrap';
-import {toggleEmptyMessageGFI} from '../../MapStore2/web/client/actions/mapInfo';
-import {showEmptyMessageGFISelector} from '../../MapStore2/web/client/selectors/mapInfo';
-import Message from '../../MapStore2/web/client/components/I18N/Message';
+import { Checkbox } from 'react-bootstrap';
+
+import { connect } from '@mapstore/utils/PluginsUtils';
+import { toggleEmptyMessageGFI } from '@mapstore/actions/mapInfo';
+import { showEmptyMessageGFISelector } from '@mapstore/selectors/mapInfo';
+import Message from '@mapstore/components/I18N/Message';
 
 /**
   * custom Identify options in Settings Plugin.

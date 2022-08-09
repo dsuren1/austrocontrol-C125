@@ -6,11 +6,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
-const ReactDOM = require('react-dom');
-const {createSink} = require('recompose');
-const expect = require('expect');
-const utcDateWrapper = require('../utcDateWrapper');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createSink } from 'recompose';
+import expect from 'expect';
+import utcDateWrapper from '@js/components/timeFilter/enhancers/utcDateWrapper';
 
 describe('utcDateWrapper enhancer', () => {
     beforeEach((done) => {

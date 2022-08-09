@@ -5,8 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import main from '../MapStore2/web/client/product/main';
-import ConfigUtils from '../MapStore2/web/client/utils/ConfigUtils';
+import main from '@mapstore/product/main';
+import ConfigUtils from '@mapstore/utils/ConfigUtils';
+import { checkForMissingPlugins } from "@mapstore/utils/DebugUtils";
+
+import plugins from '@js/plugins';
 /**
  * Add custom (overriding) translations with:
  *
@@ -20,7 +23,7 @@ ConfigUtils.setConfigProp('themePrefix', 'austrocontrol-ms2');
  *
  * ConfigUtils.setLocalConfigurationFile('localConfig.json');
  */
-ConfigUtils.setLocalConfigurationFile('localConfig.json');
+ConfigUtils.setLocalConfigurationFile('configs/localConfig.json');
 
 /**
  * Use a custom application configuration file with:
@@ -29,21 +32,21 @@ ConfigUtils.setLocalConfigurationFile('localConfig.json');
  *
  * Or override the application configuration file with (e.g. only one page with a mapviewer):
  *
- * const appConfig = assign({}, require('../MapStore2/web/client/product/appConfig'), {
+ * const appConfig = assign({}, require('@mapstore/product/appConfig'), {
  *     pages: [{
  *         name: "mapviewer",
  *         path: "/",
- *         component: require('../MapStore2/web/client/product/pages/MapViewer')
+ *         component: require('@mapstore/product/pages/MapViewer')
  *     }]
  * });
  */
-import appConfig from '../MapStore2/web/client/product/appConfig';
+import appConfig from '@mapstore/product/appConfig';
 
 /**
  * Define a custom list of plugins with:
  *
  */
 
-const plugins = require('./plugins');
+checkForMissingPlugins(plugins.plugins);
 
 main(appConfig, plugins);

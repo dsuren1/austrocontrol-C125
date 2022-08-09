@@ -6,22 +6,24 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
-const PropTypes = require('prop-types');
-const moment = require('moment');
-const momentLocalizer = require('react-widgets/lib/localizers/moment');
-const Toolbar = require('../../../MapStore2/web/client/components/misc/toolbar/Toolbar').default;
-const Message = require('../../../MapStore2/web/client/plugins/locale/Message').default;
-const localizedProps = require('../../../MapStore2/web/client/components/misc/enhancers/localizedProps').default;
+import React from 'react';
+import PropTypes from 'prop-types';
+import moment from 'moment';
+import momentLocalizer from 'react-widgets/lib/localizers/moment';
+import { head } from 'lodash';
+import { Calendar } from 'react-widgets';
+import { ListGroup, ListGroupItem, Glyphicon as GlyphiconRB, Button as ButtonRB } from 'react-bootstrap';
 
-const {head} = require('lodash');
-const {Calendar} = require('react-widgets');
-const {ListGroup, ListGroupItem, Glyphicon: GlyphiconRB, Button: ButtonRB} = require('react-bootstrap');
-const BorderLayout = require('../../../MapStore2/web/client/components/layout/BorderLayout').default;
-const Filter = localizedProps('filterPlaceholder')(require('../../../MapStore2/web/client/components/misc/Filter').default);
-const SideCard = require('./SideCardM');
+import Toolbar from '@mapstore/components/misc/toolbar/Toolbar';
+import Message from '@mapstore/plugins/locale/Message';
+import localizedProps from '@mapstore/components/misc/enhancers/localizedProps';
+import BorderLayout from '@mapstore/components/layout/BorderLayout';
+import FilterMisc from '@mapstore/components/misc/Filter';
+import tooltip from '@mapstore/components/misc/enhancers/tooltip';
+
+import SideCard from '@js/components/timeFilter/SideCardM';
+const Filter = localizedProps('filterPlaceholder')(FilterMisc);
 momentLocalizer(moment);
-const tooltip = require('../../../MapStore2/web/client/components/misc/enhancers/tooltip').default;
 const Button = tooltip(ButtonRB);
 const Glyphicon = tooltip(GlyphiconRB);
 
@@ -227,4 +229,4 @@ class DateFilter extends React.Component {
 
 }
 
-module.exports = DateFilter;
+export default DateFilter;

@@ -7,7 +7,7 @@
  */
 
 
-const React = require('react');
+import React from 'react';
 /**
  * Component for rendering a rectangular card with preview, title, description and caption.
  * @memberof components.misc.cardgrids
@@ -26,7 +26,7 @@ const React = require('react');
  * @prop {function} onClick callback on card click
  */
 
-module.exports = ({dropUp, body, className = '', style = {}, onClick = () => {}, size, title, preview, description, caption, tools, selected, ...more} = {}) =>
+export default ({dropUp, body, className = '', style = {}, onClick = () => {}, size, title, preview, description, caption, tools, selected, ...more} = {}) =>
     <div className={`mapstore-side-card${selected ? ' selected' : ''}${size ? ' ms-' + size : ''} ${className}`}
         onClick={() => onClick({title, preview, description, caption, tools, ...more})}
         style={style}>

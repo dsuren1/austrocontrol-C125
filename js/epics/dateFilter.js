@@ -7,22 +7,22 @@
  */
 import Rx from 'rxjs';
 import { includes, castArray, some } from 'lodash';
-import axios from '../../MapStore2/web/client/libs/ajax';
-
 import { LOCATION_CHANGE } from 'connected-react-router';
-import { updateLayerDimension, changeLayerProperties, CHANGE_LAYER_PROPERTIES } from '../../MapStore2/web/client/actions/layers';
-import { setEffectiveDates, SET_DATE, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '../actions/dateFilter';
-import { error } from '../../MapStore2/web/client/actions/notifications';
-import { closeIdentify, hideMapinfoMarker } from '../../MapStore2/web/client/actions/mapInfo';
 
-import { getEffectiveDatesURL, getDimensionName } from '../selectors/dateFilter';
-import { isMapInfoOpen } from '../../MapStore2/web/client/selectors/mapInfo';
-import { layersSelector, getLayersWithDimension, allBackgroundLayerSelector } from '../../MapStore2/web/client/selectors/layers';
+import axios from '@mapstore/libs/ajax';
+import { updateLayerDimension, changeLayerProperties, CHANGE_LAYER_PROPERTIES } from '@mapstore/actions/layers';
+import { error } from '@mapstore/actions/notifications';
+import { closeIdentify, hideMapinfoMarker } from '@mapstore/actions/mapInfo';
+import { isMapInfoOpen } from '@mapstore/selectors/mapInfo';
+import { layersSelector, getLayersWithDimension, allBackgroundLayerSelector } from '@mapstore/selectors/layers';
+
+import { setEffectiveDates, SET_DATE, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '@js/actions/dateFilter';
+import { getEffectiveDatesURL, getDimensionName } from '@js/selectors/dateFilter';
 
 
 const toTimeInterval = date => date ? `${date.split("T")[0]}T00:00:00.000Z/${date.split("T")[0]}T23:59:59.999Z` : date;
 // const toTimeInterval = date => `${date.split("T")[0]}T00:00:00.000Z`;
-import { MAP_CONFIG_LOADED } from '../../MapStore2/web/client/actions/config';
+import { MAP_CONFIG_LOADED } from '@mapstore/actions/config';
 export const loadDateFilterEffectiveDates = (action$, { getState = () => { } } = {}) => action$.ofType(MAP_CONFIG_LOADED)
     .switchMap( () =>
         Rx.Observable.fromPromise(axios.get(getEffectiveDatesURL(getState()))))
