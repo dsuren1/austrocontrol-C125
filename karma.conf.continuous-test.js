@@ -9,6 +9,11 @@ module.exports = function karmaConfig(config) {
         browsers: ["Chrome"],
         path: [path.join(__dirname, "js"), path.join(__dirname, "MapStore2", "web", "client")],
         testFile: 'tests.webpack.js',
-        singleRun: false
+        singleRun: false,
+        alias: {
+            '@mapstore/patcher': path.resolve(__dirname, 'node_modules', '@mapstore', 'patcher'),
+            '@mapstore': path.resolve(__dirname, 'MapStore2', 'web', 'client'),
+            '@js': path.resolve(__dirname, 'js')
+        }
     }));
 };
