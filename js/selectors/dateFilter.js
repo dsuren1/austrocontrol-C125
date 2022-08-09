@@ -8,6 +8,7 @@
 
 import {get} from 'lodash';
 import { getLayersWithDimension } from '@mapstore/selectors/layers';
+
 export const getDimensionName = state => get(state, "dateFilter.dimensionName") || "time";
 export const getEffectiveDates = state => get(state, "dateFilter.effectiveDates");
 export const getEffectiveDatesURL = state => get(state, "dateFilter.effectiveDatesURL");

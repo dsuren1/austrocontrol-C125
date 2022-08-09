@@ -9,8 +9,9 @@
 import React from 'react';
 import assign from 'object-assign';
 import PropTypes from 'prop-types';
-import { connect } from '@mapstore/utils/PluginsUtils';
 import { Checkbox } from 'react-bootstrap';
+
+import { connect } from '@mapstore/utils/PluginsUtils';
 import { toggleEmptyMessageGFI } from '@mapstore/actions/mapInfo';
 import { showEmptyMessageGFISelector } from '@mapstore/selectors/mapInfo';
 import Message from '@mapstore/components/I18N/Message';

@@ -24,7 +24,8 @@
           "terrainProvider": {
               "type": "ellipsoid"
           }
-      }
+      },
+      "floatingIdentifyDelay": 1000
     },
     "localizedLayerStyles": {
       "name": "mapstore_language"
@@ -62,7 +63,7 @@
           "defaultTextAnnotation": "New"
         },
         "maptype": {
-            "mapType": "{context.mode === 'desktop' ? 'openlayers' : 'leaflet'}"
+            "mapType": "{context.mode === 'desktop' || context.mode === 'embedded' || context.mode === 'dashboard-embedded' || context.mode === 'geostory-embedded' ? 'openlayers' : 'leaflet'}"
         },
         "catalog": {
           "default": {
@@ -359,7 +360,7 @@
                 }
               }
             }
-          }, "AutoMapUpdate", "HelpLink", "DrawerMenu", "Version", "Notifications", "BackgroundSelector", {
+          }, "AutoMapUpdate", "HelpLink", "DrawerMenu", "Version", "Notifications", "BackgroundSelector", "Swipe", {
             "name": "Annotations",
             "cfg": {
               "lineDashOptions": [{"value": "1 0"}, {"value":"10 50 30"}, {"value":"6 6"}, {"value":"20 20"}, {"value":"30 30"}],
@@ -582,7 +583,8 @@
             "Timeline",
             "Playback",
             "FeedbackMask",
-            "StyleEditor"
+            "StyleEditor",
+            "DeleteMap"
         ],
         "embedded": [{
                 "name": "Map",
@@ -600,6 +602,13 @@
                     "leaflet": {
                       "attribution": {
                         "container": "#footer-attribution-container"
+                      },
+                      "scrollWheelZoom": false,
+                      "zoomControl": true
+                    },
+                    "cesium": {
+                      "attribution": {
+                      "container": "#footer-attribution-container"
                       }
                     }
                   },
@@ -773,7 +782,7 @@
                 "containerPosition": "header",
                 "className": "navbar shadow navbar-home"
             }
-        }, "Login", "Language", "NavMenu", "DashboardSave", "DashboardSaveAs", "Attribution", "Home", {
+        }, "Login", "Language", "NavMenu", "DashboardSave", "DashboardSaveAs", "Attribution", "Home", "DeleteDashboard", {
           "name": "Share",
           "cfg": {
             "embedPanel": false,
@@ -783,11 +792,14 @@
           {
           "name": "DashboardEditor",
           "cfg": {
-            "catalog": {
-              "url": "https://sdigeo-free.austrocontrol.at/geoserver/free/wms",
-              "type": "wms",
-              "title": "AustroControl Inspire WMS Service",
-              "autoload": true
+            "selectedService": "AustroControl Inspire WMS Service",
+            "services": {
+              "AustroControl Inspire WMS Service": {
+                "url": "https://sdigeo-free.austrocontrol.at/geoserver/free/wms",
+                "type": "wms",
+                "title": "AustroControl Inspire WMS Service",
+                "autoload": true
+              }
             },
             "containerPosition": "columns"
           }
@@ -839,6 +851,7 @@
           "GeoStory",
           "GeoStorySave",
           "GeoStorySaveAs",
+          "DeleteGeoStory",
           "MapEditor",
           "MediaEditor",
           {
@@ -889,7 +902,7 @@
           {
               "name": "ContextCreator",
               "cfg": {
-                  "documentationBaseURL": "https://mapstore.geo-solutions.it/mapstore/docs/api/plugins",
+                  "documentationBaseURL": "https://mapstore.geosolutionsgroup.com/mapstore/docs/api/plugins",
                   "backToPageDestRoute": "/context-manager",
                   "backToPageConfirmationMessage": "contextCreator.undo"
               }

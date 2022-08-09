@@ -29,20 +29,30 @@ module.exports = require('./MapStore2/build/buildConfig')(
     },
     {
         '/rest/geostore': {
-            target: "https://austrocontrol.geo-solutions.it/austrocontrol-ms2",
+            target: "http://localhost:8080/mapstore",
             secure: false
         },
         '/rest/config': {
-            target: "https://austrocontrol.geo-solutions.it/austrocontrol-ms2",
+            target: "http://localhost:8080/mapstore",
             secure: false
         },
         '/pdf': {
-            target: "https://austrocontrol.geo-solutions.it/austrocontrol-ms2",
+            target: "http://localhost:8080/mapstore",
+            secure: false
+        },
+        '/mapstore/pdf': {
+            target: "http://localhost:8080",
             secure: false
         },
         '/proxy': {
-            target: "https://austrocontrol.geo-solutions.it/austrocontrol-ms2",
+            target: "http://localhost:8080/mapstore",
             secure: false
-        }
+        },
+        '/extensions': {
+            target: "http://localhost:8080/mapstore"
+        },
+        '/dist/extensions': {
+            target: "http://localhost:8080/mapstore"
+        },
     }
 );

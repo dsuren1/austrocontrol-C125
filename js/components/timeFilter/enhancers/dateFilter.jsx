@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import { compose, withState, withHandlers, withPropsOnChange } from 'recompose';
-import utcDateWrapper from './utcDateWrapper';
+import utcDateWrapper from '@js/components/timeFilter/enhancers/utcDateWrapper';
 
 
 export default compose(

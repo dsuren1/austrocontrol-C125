@@ -7,8 +7,9 @@
  */
 import main from '@mapstore/product/main';
 import ConfigUtils from '@mapstore/utils/ConfigUtils';
-import plugins from './plugins';
 import { checkForMissingPlugins } from "@mapstore/utils/DebugUtils";
+
+import plugins from '@js/plugins';
 /**
  * Add custom (overriding) translations with:
  *

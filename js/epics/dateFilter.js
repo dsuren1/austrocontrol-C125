@@ -7,17 +7,17 @@
  */
 import Rx from 'rxjs';
 import { includes, castArray, some } from 'lodash';
-import axios from '@mapstore/libs/ajax';
-
 import { LOCATION_CHANGE } from 'connected-react-router';
+
+import axios from '@mapstore/libs/ajax';
 import { updateLayerDimension, changeLayerProperties, CHANGE_LAYER_PROPERTIES } from '@mapstore/actions/layers';
-import { setEffectiveDates, SET_DATE, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '../actions/dateFilter';
 import { error } from '@mapstore/actions/notifications';
 import { closeIdentify, hideMapinfoMarker } from '@mapstore/actions/mapInfo';
-
-import { getEffectiveDatesURL, getDimensionName } from '../selectors/dateFilter';
 import { isMapInfoOpen } from '@mapstore/selectors/mapInfo';
 import { layersSelector, getLayersWithDimension, allBackgroundLayerSelector } from '@mapstore/selectors/layers';
+
+import { setEffectiveDates, SET_DATE, toggleLayerVisibility, TOGGLE_LAYER_VISIBILITY } from '@js/actions/dateFilter';
+import { getEffectiveDatesURL, getDimensionName } from '@js/selectors/dateFilter';
 
 
 const toTimeInterval = date => date ? `${date.split("T")[0]}T00:00:00.000Z/${date.split("T")[0]}T23:59:59.999Z` : date;

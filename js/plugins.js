@@ -6,11 +6,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 import productPlugins from '@mapstore/product/plugins'
-import DateFilter from './plugins/DateFilter'
-import IdentifySettingsPlugin from './plugins/IdentifySettings'
+
+import DateFilter from '@js/plugins/DateFilter'
+import IdentifySettingsPlugin from '@js/plugins/IdentifySettings'
 
 export default {
-    ...productPlugins,
+    requires: {
+        ...productPlugins.requires
+    },
     plugins: {
         ...productPlugins.plugins,
         // project plugins

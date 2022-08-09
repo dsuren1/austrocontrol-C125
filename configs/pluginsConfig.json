@@ -426,8 +426,15 @@
       "name": "ScaleBox",
       "title": "plugins.ScaleBox.title",
       "description": "plugins.ScaleBox.description",
+      "dependencies": ["MapFooter"]
+    },
+    {
+      "name": "GlobeViewSwitcher",
+      "glyph": "globe",
+      "title": "plugins.Globe.title",
+      "description": "plugins.Globe.description",
       "dependencies": [
-        "MapFooter"
+        "Toolbar"
       ]
     },
     {
@@ -483,6 +490,16 @@
       "title": "plugins.SaveAs.title",
       "hidden": true,
       "description": "plugins.SaveAs.description",
+      "dependencies": [
+        "BurgerMenu"
+      ]
+    },
+    {
+      "name": "DeleteMap",
+      "glyph": "trash",
+      "title": "plugins.DeleteMap.title",
+      "hidden": true,
+      "description": "plugins.DeleteMap.description",
       "dependencies": [
         "BurgerMenu"
       ]
@@ -587,9 +604,13 @@
       "glyph": "floppy-save",
       "title": "plugins.UserSession.title",
       "description": "plugins.UserSession.description",
-      "dependencies": [
-        "BurgerMenu"
-      ]
+      "dependencies": ["BurgerMenu"]
+    }, {
+      "name": "StreetView",
+      "glyph": "road",
+      "title": "plugins.StreetView.title",
+      "description": "plugins.StreetView.description",
+      "dependencies": ["Toolbar"]
     }
   ]
 }

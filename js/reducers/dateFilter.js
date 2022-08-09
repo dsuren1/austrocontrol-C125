@@ -7,7 +7,7 @@
  */
 
 import { set } from '@mapstore/utils/ImmutableUtils';
-import { SET_EFFECTIVE_DATES, SET_DATE, TOGGLE_LAYER_VISIBILITY} from '../actions/dateFilter';
+import { SET_EFFECTIVE_DATES, SET_DATE, TOGGLE_LAYER_VISIBILITY} from '@js/actions/dateFilter';
 
 /**
  * Reducer to manage the state of DateFilter plugin.

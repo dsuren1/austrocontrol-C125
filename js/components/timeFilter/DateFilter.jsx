@@ -10,19 +10,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import momentLocalizer from 'react-widgets/lib/localizers/moment';
-import Toolbar from '@mapstore/components/misc/toolbar/Toolbar';
-import Message from '@mapstore/plugins/locale/Message';
-import localizedProps from '@mapstore/components/misc/enhancers/localizedProps';
-
 import { head } from 'lodash';
 import { Calendar } from 'react-widgets';
 import { ListGroup, ListGroupItem, Glyphicon as GlyphiconRB, Button as ButtonRB } from 'react-bootstrap';
+
+import Toolbar from '@mapstore/components/misc/toolbar/Toolbar';
+import Message from '@mapstore/plugins/locale/Message';
+import localizedProps from '@mapstore/components/misc/enhancers/localizedProps';
 import BorderLayout from '@mapstore/components/layout/BorderLayout';
 import FilterMisc from '@mapstore/components/misc/Filter';
-import SideCard from './SideCardM';
+import tooltip from '@mapstore/components/misc/enhancers/tooltip';
+
+import SideCard from '@js/components/timeFilter/SideCardM';
 const Filter = localizedProps('filterPlaceholder')(FilterMisc);
 momentLocalizer(moment);
-import tooltip from '@mapstore/components/misc/enhancers/tooltip';
 const Button = tooltip(ButtonRB);
 const Glyphicon = tooltip(GlyphiconRB);
 

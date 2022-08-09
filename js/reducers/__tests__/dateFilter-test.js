@@ -7,9 +7,9 @@
  */
 
 import expect from 'expect';
-import dateFilter from '../dateFilter';
-import { setEffectiveDates, setDate, toggleLayerVisibility } from '../../actions/dateFilter';
-import { getEffectiveDates, getEffectiveDatesURL, getHideLayers, getDate } from '../../selectors/dateFilter';
+import dateFilter from '@js/reducers/dateFilter';
+import { setEffectiveDates, setDate, toggleLayerVisibility } from '@js/actions/dateFilter';
+import { getEffectiveDates, getEffectiveDatesURL, getHideLayers, getDate } from '@js/selectors/dateFilter';
 
 describe('dateFilter reducer', () => {
     it('setEffectiveDates sets dates', () => {

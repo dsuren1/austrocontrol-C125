@@ -10,14 +10,14 @@ import { connect} from 'react-redux';
 import { compose, branch, renderNothing } from 'recompose';
 import { createSelector } from 'reselect';
 
-import { setDate, toggleLayerVisibility } from '../actions/dateFilter';
-import { getEffectiveDates, getDate, showDateFilter, getHideLayers } from '../selectors/dateFilter';
 import { mapLayoutValuesSelector } from '@mapstore/selectors/maplayout';
 
-import * as epics from '../epics/dateFilter';
-import dateFilter from '../reducers/dateFilter';
-import enhanceDateFilter from '../components/timeFilter/enhancers/dateFilter';
-import DateFilter from '../components/timeFilter/DateFilter';
+import { setDate, toggleLayerVisibility } from '@js/actions/dateFilter';
+import { getEffectiveDates, getDate, showDateFilter, getHideLayers } from '@js/selectors/dateFilter';
+import * as epics from '@js/epics/dateFilter';
+import dateFilter from '@js/reducers/dateFilter';
+import enhanceDateFilter from '@js/components/timeFilter/enhancers/dateFilter';
+import DateFilter from '@js/components/timeFilter/DateFilter';
 
 /**
  * Floating widget that allows to filter layers selecting a date. Many of the settings can be set
