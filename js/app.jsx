@@ -9,6 +9,7 @@ import main from '@mapstore/product/main';
 import ConfigUtils from '@mapstore/utils/ConfigUtils';
 import { checkForMissingPlugins } from "@mapstore/utils/DebugUtils";
 
+import '../assets/css/custom.css';
 import plugins from '@js/plugins';
 /**
  * Add custom (overriding) translations with:
