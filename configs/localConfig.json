@@ -2,9 +2,6 @@
     "proxyUrl": {
         "url": "proxy/?url=",
         "useCORS": [
-            "http://demo.geo-solutions.it/geoserver",
-            "https://demo.geo-solutions.it:443/geoserver",
-            "https://demo.geo-solutions.it/geoserver",
             "https://nominatim.openstreetmap.org",
             "https://sdimdt-free.austrocontrol.at"
         ]
@@ -99,24 +96,6 @@
                 "type": "csw",
                 "title": "AustroControl Free CSW Service",
                 "autoload": true
-              },
-              "Demo CSW Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/csw",
-                "type": "csw",
-                "title": "Demo CSW Service",
-                "autoload": true
-              },
-              "Demo WMS Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/wms",
-                "type": "wms",
-                "title": "Demo WMS Service",
-                "autoload": false
-              },
-              "Demo WMTS Service": {
-                "url": "https://demo.geo-solutions.it/geoserver/gwc/service/wmts",
-                "type": "wmts",
-                "title": "Demo WMTS Service",
-                "autoload": false
               }
             },
             "staticServices": {
@@ -785,7 +764,7 @@
         }, "Login", "Language", "NavMenu", "DashboardSave", "DashboardSaveAs", "Attribution", "Home", "DeleteDashboard", {
           "name": "Share",
           "cfg": {
-            "embedPanel": false,
+            "embedPanel": true,
             "advancedSettings": false
           }
         },
@@ -877,7 +856,7 @@
           {
             "name": "Share",
             "cfg": {
-              "embedPanel": false,
+              "embedPanel": true,
               "advancedSettings": {
                 "homeButton": true,
                 "sectionId": true
