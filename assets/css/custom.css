@@ -1,4 +1,4 @@
-/* Fix to handle TOC header toolbar with multiple buttons getting wrapped and partially hidden */
+/* Temporary fix https://github.com/geosolutions-it/MapStore2/issues/8471 */
 .mapstore-toc-head.toc-head-sections-3 .row:last-child .square-button-md {
     width: 29px;
 }
