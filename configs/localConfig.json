@@ -171,7 +171,7 @@
       }
   },
     "plugins": {
-        "mobile": [{
+        "mobile": ["About",{
                 "name": "Map",
                 "cfg": {
                     "mapOptions": {
@@ -183,14 +183,14 @@
                       }
                     }
                 }
-            }, "Version", "DrawerMenu",
+            }, "DrawerMenu",
             {
               "name": "Details",
               "override": {
                 "Toolbar": {
                   "priority": 1
                 },
-                "BurgerMenu": {
+                "SidebarMenu": {
                   "priority": 1
                 }
               }
@@ -306,7 +306,7 @@
               "Toolbar": {
                 "priority": 1
               },
-              "BurgerMenu": {
+              "SidebarMenu": {
                 "priority": 1
               }
             }
@@ -339,7 +339,7 @@
                 }
               }
             }
-          }, "AutoMapUpdate", "HelpLink", "DrawerMenu", "Version", "Notifications", "BackgroundSelector", "Swipe", {
+          }, "AutoMapUpdate", "HelpLink", "DrawerMenu", "Notifications", "BackgroundSelector", "Swipe", {
             "name": "Annotations",
             "cfg": {
               "lineDashOptions": [{"value": "1 0"}, {"value":"10 50 30"}, {"value":"6 6"}, {"value":"20 20"}, {"value":"30 30"}],
@@ -361,7 +361,7 @@
                 "Toolbar": {
                   "priority": 1
                 },
-                "BurgerMenu": {
+                "SidebarMenu": {
                   "priority": 1
                 }
               }
@@ -470,8 +470,7 @@
                     "wrap": true
                 }
             },{
-              "name": "About",
-              "showIn": ["BurgerMenu"]
+              "name": "About"
             }, {
               "name": "MousePosition",
               "cfg": {
@@ -539,7 +538,7 @@
                 "declineUrl" : "http://www.google.com"
                 }
             },
-            "OmniBar", "Login", "Save", "SaveAs", "BurgerMenu", "Expander", "Undo", "Redo", "FullScreen", "GlobeViewSwitcher", "SearchServicesConfig",
+            "OmniBar", "Login", "Save", "SaveAs", "Expander", "Undo", "Redo", "FullScreen", "GlobeViewSwitcher", "SearchServicesConfig",
           {
             "name": "SearchByBookmark",
             "cfg": {
@@ -563,7 +562,8 @@
             "Playback",
             "FeedbackMask",
             "StyleEditor",
-            "DeleteMap"
+            "DeleteMap",
+            "SidebarMenu"
         ],
         "embedded": [{
                 "name": "Map",
@@ -755,7 +755,7 @@
             "declineUrl" : "http://www.google.com"
           }
         }],
-        "dashboard": [{
+        "dashboard": ["About",{
             "name": "OmniBar",
             "cfg": {
                 "containerPosition": "header",
@@ -806,6 +806,7 @@
             }
         }],
         "geostory": [
+          "About",
           {
             "name": "OmniBar",
             "cfg": {
