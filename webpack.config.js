@@ -54,6 +54,6 @@ module.exports = require('./MapStore2/build/buildConfig')(
         '/dist/extensions': {
             target: "https://austrocontrol.geo-solutions.it/austrocontrol-ms2",
             secure: false
-        },
+        }
     }
 );
