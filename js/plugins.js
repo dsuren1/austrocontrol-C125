@@ -6,9 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 import productPlugins from '@mapstore/product/plugins';
-
-import DateFilter from '@js/plugins/DateFilter';
-import IdentifySettingsPlugin from '@js/plugins/IdentifySettings';
+import { toModulePlugin } from "@mapstore/utils/ModulePluginsUtils";
 
 export default {
     requires: {
@@ -17,7 +15,7 @@ export default {
     plugins: {
         ...productPlugins.plugins,
         // project plugins
-        DateFilter,
-        IdentifySettingsPlugin
+        DateFilter: toModulePlugin('DateFilter', () => import(/* webpackChunkName: 'plugins/dateFilter' */ '@js/plugins/DateFilter')),
+        IdentifySettingsPlugin: toModulePlugin('IdentifySettings', () => import(/* webpackChunkName: 'plugins/identifySettings' */ '@js/plugins/IdentifySettings'))
     }
 };
